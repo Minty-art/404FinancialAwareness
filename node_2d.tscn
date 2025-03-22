@@ -1,7 +1,128 @@
-[gd_scene format=3 uid="uid://bftrjltmj485v"]
+[gd_scene load_steps=10 format=3 uid="uid://bftrjltmj485v"]
+
+[ext_resource type="Texture2D" uid="uid://nqfiwyijolwv" path="res://team404/bed.png" id="1_6vmig"]
+[ext_resource type="Texture2D" uid="uid://cqo57ixpdffjb" path="res://team404/background.png" id="1_q0rvx"]
+[ext_resource type="Texture2D" uid="uid://cee1c547n3p1k" path="res://team404/bed_hover.png" id="2_d71hv"]
+[ext_resource type="Texture2D" uid="uid://y4jyxtkdau40" path="res://team404/dresser.png" id="3_2am70"]
+[ext_resource type="Texture2D" uid="uid://osq8cdvkn2s3" path="res://team404/dresser_hover.png" id="4_p5qij"]
+[ext_resource type="Texture2D" uid="uid://de58xi8j5gx2l" path="res://team404/lamp.png" id="5_mgylb"]
+[ext_resource type="Texture2D" uid="uid://cpsv0rkfknvo8" path="res://team404/lamp_hover.png" id="6_hvfn2"]
+[ext_resource type="Texture2D" uid="uid://cyi8cwdwv37oj" path="res://team404/door.png" id="8_u5gne"]
+[ext_resource type="Texture2D" uid="uid://ci8e5por4q57y" path="res://team404/door_hover.png" id="9_usygt"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Bed" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
+z_as_relative = false
+position = Vector2(776, 320)
+scale = Vector2(2.15, 2.15)
+texture = ExtResource("1_q0rvx")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="itemButtons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 101.0
+offset_top = 50.0
+offset_right = 141.0
+offset_bottom = 90.0
+
+[node name="bed" type="TextureButton" parent="itemButtons"]
+z_index = 2
+layout_mode = 0
+offset_left = 499.0
+offset_top = 134.0
+offset_right = 852.0
+offset_bottom = 354.0
+scale = Vector2(2.15, 2.15)
+tooltip_text = "Go to Sleep?"
+texture_normal = ExtResource("1_6vmig")
+texture_pressed = ExtResource("1_6vmig")
+texture_hover = ExtResource("2_d71hv")
+ignore_texture_size = true
+
+[node name="ColorRect" type="ColorRect" parent="itemButtons/bed"]
+layout_mode = 0
+offset_left = -78.0
+offset_top = 33.0
+offset_right = 142.0
+offset_bottom = 122.0
+color = Color(0.0941176, 0.0980392, 0.101961, 1)
+
+[node name="Label" type="Label" parent="itemButtons/bed/ColorRect"]
+layout_mode = 0
+offset_left = 3.30232
+offset_top = 3.48837
+offset_right = 216.302
+offset_bottom = 70.4884
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.494118, 0.227451, 0.87451, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "Would you like to sleep and 
+proceed to the next day?"
+
+[node name="Yes" type="Button" parent="itemButtons/bed/ColorRect/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.111
+offset_left = 41.0
+offset_top = 45.0
+offset_right = 82.0
+offset_bottom = 68.563
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "Yes"
+
+[node name="No" type="Button" parent="itemButtons/bed/ColorRect/Label"]
+layout_mode = 0
+offset_left = 123.209
+offset_top = 44.8837
+offset_right = 171.209
+offset_bottom = 75.8837
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "No"
+
+[node name="dresser" type="TextureButton" parent="itemButtons"]
+z_index = 1
+layout_mode = 0
+offset_left = 291.0
+offset_top = 78.0
+offset_right = 418.0
+offset_bottom = 298.0
+scale = Vector2(2.15, 2.15)
+tooltip_text = "Personal Investments?"
+texture_normal = ExtResource("3_2am70")
+texture_pressed = ExtResource("3_2am70")
+texture_hover = ExtResource("4_p5qij")
+ignore_texture_size = true
+
+[node name="dresserMenu" type="PopupMenu" parent="itemButtons/dresser"]
+
+[node name="lamp" type="TextureButton" parent="itemButtons"]
+z_index = 3
+layout_mode = 0
+offset_left = 1179.0
+offset_top = 222.0
+offset_right = 1268.0
+offset_bottom = 397.0
+scale = Vector2(2.15, 2.15)
+tooltip_text = "Personal Investment?"
+texture_normal = ExtResource("5_mgylb")
+texture_pressed = ExtResource("5_mgylb")
+texture_hover = ExtResource("6_hvfn2")
+ignore_texture_size = true
+
+[node name="door" type="TextureButton" parent="itemButtons"]
+z_index = 1
+layout_mode = 0
+offset_left = -61.0
+offset_top = 126.0
+offset_right = 21.0
+offset_bottom = 330.0
+scale = Vector2(2.15, 2.15)
+tooltip_text = "Go to work?"
+texture_normal = ExtResource("8_u5gne")
+texture_pressed = ExtResource("8_u5gne")
+texture_hover = ExtResource("9_usygt")
+
+[node name="doorMenu" type="PopupMenu" parent="itemButtons/door"]
