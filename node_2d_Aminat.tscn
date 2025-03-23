@@ -1,0 +1,509 @@
+[gd_scene load_steps=4 format=3 uid="uid://bftrjltmj485v"]
+
+[ext_resource type="Script" uid="uid://b4aoo6x66ggtf" path="res://node_2d.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://ddphbeuvl7rqn" path="res://Payday.cs" id="1_wtcfe"]
+[ext_resource type="Script" path="res://payday.gd" id="2_0e48y"]
+
+[node name="Node2D_Aminat" type="Node2D"]
+script = ExtResource("1_epypp")
+
+[node name="Bed" type="Sprite2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="PaydayEvent" type="ColorRect" parent="."]
+visible = false
+offset_left = 249.0
+offset_top = 219.0
+offset_right = 857.0
+offset_bottom = 375.0
+color = Color(0.860667, 0.62, 1, 1)
+
+[node name="PAYDAY" type="Label" parent="PaydayEvent"]
+offset_left = 14.0
+offset_right = 596.0
+offset_bottom = 84.0
+text = "You have recieved your two weeks pay! You want to save 20% of the money
+
+How do you save it?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="PaydayEvent/PAYDAY"]
+layout_mode = 1
+anchor_top = 0.32
+anchor_right = 0.334
+anchor_bottom = 0.533
+offset_left = 260.0
+offset_top = 64.12
+offset_right = 150.612
+offset_bottom = 143.567
+
+[node name="Bank" type="Button" parent="PaydayEvent/PAYDAY/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.15
+anchor_top = 0.329
+anchor_right = 1.0
+anchor_bottom = 0.591
+offset_left = -7.25
+offset_top = -18.2471
+offset_right = 2.75
+offset_bottom = -14.6474
+action_mode = 0
+button_mask = 0
+text = "Bank"
+
+[node name="Invest" type="Button" parent="PaydayEvent/PAYDAY/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.85
+anchor_top = 0.338
+anchor_right = -0.55
+anchor_bottom = 0.599
+offset_left = 6.25002
+offset_top = -18.9006
+offset_right = 11.25
+offset_bottom = -13.3061
+text = "Investments"
+
+[node name="Bedding" type="Button" parent="PaydayEvent/PAYDAY/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.487
+anchor_top = 0.329
+anchor_right = 2.45
+anchor_bottom = 0.5
+offset_left = -23.395
+offset_top = -18.0245
+offset_right = 7.565
+offset_bottom = -3.66951
+text = "Mattress"
+
+[node name="BankChoice" type="ColorRect" parent="."]
+visible = false
+offset_left = 334.0
+offset_top = 239.0
+offset_right = 770.0
+offset_bottom = 354.0
+color = Color(0.0680167, 0.07, 0.0462, 1)
+
+[node name="Label" type="Label" parent="BankChoice"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 433.0
+offset_bottom = 117.0
+text = "Saving your money through a bank is a common route.
+However it can lead to little to no yield, depending on 
+the return rates"
+horizontal_alignment = 1
+justification_flags = 171
+
+[node name="exitBank" type="Button" parent="BankChoice/Label"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 81.0
+offset_right = 433.0
+offset_bottom = 112.0
+text = "X"
+
+[node name="InvestChoice" type="ColorRect" parent="."]
+visible = false
+offset_left = 339.0
+offset_top = 236.0
+offset_right = 775.0
+offset_bottom = 351.0
+color = Color(0.0680167, 0.07, 0.0462, 1)
+
+[node name="Label" type="Label" parent="InvestChoice"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 431.0
+offset_bottom = 115.0
+text = "Investments long term have a high yield. However
+ be wary of the volitile market"
+horizontal_alignment = 1
+justification_flags = 171
+
+[node name="exitInvest" type="Button" parent="InvestChoice/Label"]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 69.0
+offset_right = 435.0
+offset_bottom = 100.0
+text = "X"
+
+[node name="MattressChoice" type="ColorRect" parent="."]
+visible = false
+offset_left = 341.0
+offset_top = 236.0
+offset_right = 777.0
+offset_bottom = 351.0
+color = Color(0.0680167, 0.07, 0.0462, 1)
+
+[node name="Label" type="Label" parent="MattressChoice"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 428.0
+offset_bottom = 108.0
+text = "Unfornately, inflation exists.
+Money that's not in an assest or an account
+loses value due to inflation.
+Called Devaluation."
+horizontal_alignment = 1
+justification_flags = 171
+
+[node name="exitMattress" type="Button" parent="MattressChoice/Label"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 79.0
+offset_right = 427.0
+offset_bottom = 110.0
+text = "X"
+
+[node name="PaydayFail" type="PopupMenu" parent="."]
+script = ExtResource("1_wtcfe")
+
+[node name="Payday" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("2_0e48y")
+
+[node name="LifeInsuranceEvent" type="ColorRect" parent="."]
+visible = false
+offset_left = 300.0
+offset_top = 220.0
+offset_right = 834.0
+offset_bottom = 376.0
+color = Color(0.860667, 0.62, 1, 1)
+
+[node name="Life Insurance" type="Label" parent="LifeInsuranceEvent"]
+offset_left = -27.0
+offset_top = 9.0
+offset_right = 555.0
+offset_bottom = 93.0
+text = "You want to leave your family some money...
+Just in case.
+What Life Insurance Policy are you getting?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="LifeInsuranceEvent/Life Insurance"]
+layout_mode = 1
+anchor_top = 0.32
+anchor_right = 0.334
+anchor_bottom = 0.533
+offset_left = 255.0
+offset_top = 57.12
+offset_right = 145.612
+offset_bottom = 136.567
+
+[node name="Universal Life" type="Button" parent="LifeInsuranceEvent/Life Insurance/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.282
+anchor_top = 0.092
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -3.03
+offset_top = 3.0448
+offset_right = 3.5
+offset_bottom = -5.66951
+text = "Univ. Life"
+
+[node name="Sliced Bread" type="Button" parent="LifeInsuranceEvent/Life Insurance/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.487
+anchor_top = 0.092
+anchor_right = 2.659
+anchor_bottom = 0.5
+offset_left = -21.395
+offset_top = 4.04481
+offset_right = 8.98499
+offset_bottom = -4.66951
+text = "Index Univ. Life"
+
+[node name="Term" type="Button" parent="LifeInsuranceEvent/Life Insurance/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.953
+anchor_top = 0.123
+anchor_right = -0.796
+anchor_bottom = 0.442
+offset_left = 0.00500488
+offset_top = 0.0273018
+offset_right = 17.66
+offset_bottom = -0.0238419
+text = "Incr. Term"
+
+[node name="TermChoice" type="ColorRect" parent="."]
+visible = false
+offset_left = 399.0
+offset_top = 232.0
+offset_right = 732.0
+offset_bottom = 363.0
+color = Color(0.08, 0.08, 0.08, 1)
+
+[node name="Label" type="Label" parent="TermChoice"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 335.0
+offset_bottom = 124.0
+text = "Great for impending doom, but only
+for 30 or 40 years  depending on the
+insurer.
+Pretty cheap premium though"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="TermChoice/Label"]
+anchors_preset = 0
+offset_left = 544.0
+offset_top = 180.0
+offset_right = 584.0
+offset_bottom = 220.0
+
+[node name="exit_term" type="Button" parent="TermChoice/Label/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.875
+anchor_top = -2.0
+anchor_right = -5.3
+anchor_bottom = -1.225
+offset_left = -1.99998
+offset_top = -8.0
+offset_right = -2.0
+offset_bottom = -8.0
+text = "X"
+
+[node name="UL_Choice" type="ColorRect" parent="."]
+visible = false
+offset_left = 358.0
+offset_top = 227.0
+offset_right = 765.0
+offset_bottom = 367.0
+color = Color(0.04, 0.04, 0.04, 1)
+
+[node name="Label" type="Label" parent="UL_Choice"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 390.0
+offset_bottom = 132.0
+text = "Universal Life Insurance.
+A policy that's perfect for a long and healthy life 
+as long as you pay the pretty penny that is the
+premium."
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="UL_Choice/Label"]
+anchors_preset = 0
+offset_left = 227.0
+offset_top = 171.0
+offset_right = 267.0
+offset_bottom = 211.0
+
+[node name="exit_UL" type="Button" parent="UL_Choice/Label/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.275
+anchor_top = -1.8
+anchor_right = 3.799
+anchor_bottom = -0.95
+offset_left = 7.0
+offset_top = -3.0
+offset_right = 12.04
+offset_bottom = -5.0
+text = "X"
+
+[node name="IUL_Choice" type="ColorRect" parent="."]
+visible = false
+offset_left = 341.0
+offset_top = 217.0
+offset_right = 798.0
+offset_bottom = 382.0
+color = Color(0.03, 0.03, 0.03, 1)
+
+[node name="Label" type="Label" parent="IUL_Choice"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 13.0
+offset_right = 432.0
+offset_bottom = 153.0
+text = "Index Universal Life Insurance
+The 'sliced bread' of Life Insurance
+perfect for a long and happy life and even
+better you pay the pretty penny for a bit.
+And it pays you back!"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="IUL_Choice/Label"]
+anchors_preset = 0
+offset_left = 151.0
+offset_top = 109.0
+offset_right = 191.0
+offset_bottom = 149.0
+
+[node name="exit_IUL" type="Button" parent="IUL_Choice/Label/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.225
+anchor_right = 6.925
+anchor_bottom = 0.875
+offset_left = -1.52588e-05
+offset_top = 10.0
+offset_bottom = 8.0
+text = "X"
+
+[node name="CreditCardEvent" type="ColorRect" parent="."]
+offset_left = 278.0
+offset_top = 222.0
+offset_right = 827.0
+offset_bottom = 399.0
+color = Color(0.858824, 0.619608, 1, 1)
+
+[node name="Label" type="Label" parent="CreditCardEvent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.231
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = 4.0
+offset_right = 393.181
+offset_bottom = 68.5
+text = "Your mail arrived this morning.
+And, drumroll please
+It's yet another credit card company asking you to get
+a new credit card.
+Do you get a new credit card?
+"
+horizontal_alignment = 1
+
+[node name="Yes" type="Button" parent="CreditCardEvent/Label"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 134.0
+offset_right = 217.0
+offset_bottom = 165.0
+text = "Yes"
+
+[node name="No" type="Button" parent="CreditCardEvent/Label"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 135.0
+offset_right = 457.0
+offset_bottom = 166.0
+text = "No"
+
+[node name="new_CardChoice" type="ColorRect" parent="."]
+visible = false
+offset_left = 331.0
+offset_top = 199.0
+offset_right = 761.0
+offset_bottom = 419.0
+color = Color(0.05, 0.05, 0.05, 1)
+
+[node name="Label" type="Label" parent="new_CardChoice"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 8.0
+offset_right = 407.0
+offset_bottom = 213.0
+text = "The correct answer was no.
+Unless you want to earn a credit score.
+Then...
+YOU. PAY. IN. FULL. 
+(unless you can't)
+Make those cred
+it card companies regret making
+you get a new credit card!"
+horizontal_alignment = 1
+
+[node name="exit_newCard" type="Button" parent="new_CardChoice/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.037
+anchor_top = 0.924
+anchor_right = 1.084
+anchor_bottom = 1.031
+offset_left = -18.134
+offset_top = -15.42
+offset_right = -11.088
+offset_bottom = 0.20903
+text = "X"
+
+[node name="no_CardChoice" type="ColorRect" parent="."]
+visible = false
+offset_left = 373.0
+offset_top = 253.0
+offset_right = 729.0
+offset_bottom = 381.0
+color = Color(0.04, 0.04, 0.04, 1)
+
+[node name="Label" type="Label" parent="no_CardChoice"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 342.0
+offset_bottom = 104.0
+text = "Congrats you dodged the loan card
+Clap for yourself,
+but not for your Credit Score"
+horizontal_alignment = 1
+
+[node name="exit_noCard" type="Button" parent="no_CardChoice/Label"]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 72.0
+offset_right = 339.0
+offset_bottom = 103.0
+text = "X"
+
+[node name="extraCardFact" type="ColorRect" parent="."]
+visible = false
+offset_left = 362.0
+offset_top = 231.0
+offset_right = 740.0
+offset_bottom = 393.0
+color = Color(0.03, 0.03, 0.03, 1)
+
+[node name="Label" type="Label" parent="extraCardFact"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 14.0
+offset_right = 375.0
+offset_bottom = 141.0
+text = "Fun Fact:
+If you have fully paid off your credit
+card and stop using it the credit
+card company will cancel the card for you
+No harmed credit score required"
+horizontal_alignment = 1
+
+[node name="exit_extraCard" type="Button" parent="extraCardFact/Label"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 117.0
+offset_right = 374.0
+offset_bottom = 148.0
+text = "X"
+
+[connection signal="pressed" from="PaydayEvent/PAYDAY/Control/Bank" to="." method="_on_Bankbutton_pressed"]
+[connection signal="pressed" from="PaydayEvent/PAYDAY/Control/Invest" to="." method="_on_InvestButton_pressed"]
+[connection signal="pressed" from="PaydayEvent/PAYDAY/Control/Bedding" to="." method="_on_MattressButton_pressed"]
+[connection signal="pressed" from="BankChoice/Label/exitBank" to="." method="_on_exit_bank_pressed"]
+[connection signal="pressed" from="InvestChoice/Label/exitInvest" to="." method="_on_exit_invest_pressed"]
+[connection signal="pressed" from="MattressChoice/Label/exitMattress" to="." method="_on_exit_mattress_pressed"]
+[connection signal="pressed" from="LifeInsuranceEvent/Life Insurance/Control/Universal Life" to="." method="_on_universal_life_pressed"]
+[connection signal="pressed" from="LifeInsuranceEvent/Life Insurance/Control/Sliced Bread" to="." method="_on_sliced_bread_pressed"]
+[connection signal="pressed" from="LifeInsuranceEvent/Life Insurance/Control/Term" to="." method="_on_term_pressed"]
+[connection signal="pressed" from="TermChoice/Label/Control/exit_term" to="." method="_on_exit_term_pressed"]
+[connection signal="pressed" from="UL_Choice/Label/Control/exit_UL" to="." method="_on_exit_ul_pressed"]
+[connection signal="pressed" from="IUL_Choice/Label/Control/exit_IUL" to="." method="_on_exit_iul_pressed"]
+[connection signal="pressed" from="CreditCardEvent/Label/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="CreditCardEvent/Label/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="new_CardChoice/Label/exit_newCard" to="." method="_on_exit_new_card_pressed"]
+[connection signal="pressed" from="no_CardChoice/Label/exit_noCard" to="." method="_on_exit_no_card_pressed"]
+[connection signal="pressed" from="extraCardFact/Label/exit_extraCard" to="." method="_on_exit_extra_card_pressed"]
