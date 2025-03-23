@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://yos81wm2sqck"]
 
-[ext_resource type="Script" uid="uid://b4aoo6x66ggtf" path="res://node_2d.gd" id="1_6vd5f"]
+[ext_resource type="Script" uid="uid://bsp7xw6we5vf2" path="res://node_2d_Aminat.gd" id="1_cbb0x"]
 
 [node name="Node2D_Aminat" type="Node2D"]
-script = ExtResource("1_6vd5f")
+script = ExtResource("1_cbb0x")
 
 [node name="Bed" type="Sprite2D" parent="."]
 
