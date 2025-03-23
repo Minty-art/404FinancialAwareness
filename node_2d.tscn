@@ -1,22 +1,145 @@
-[gd_scene load_steps=10 format=3 uid="uid://bftrjltmj485v"]
+[gd_scene load_steps=48 format=3 uid="uid://bftrjltmj485v"]
 
 [ext_resource type="Texture2D" uid="uid://nqfiwyijolwv" path="res://team404/bed.png" id="1_6vmig"]
+[ext_resource type="Script" path="res://node_2d_kat.gd" id="1_mhhqi"]
 [ext_resource type="Texture2D" uid="uid://cqo57ixpdffjb" path="res://team404/background.png" id="1_q0rvx"]
 [ext_resource type="Texture2D" uid="uid://cee1c547n3p1k" path="res://team404/bed_hover.png" id="2_d71hv"]
+[ext_resource type="Script" path="res://title_sequence.gd" id="2_ilaxd"]
+[ext_resource type="Script" path="res://Background.gd" id="2_oxkay"]
 [ext_resource type="Texture2D" uid="uid://y4jyxtkdau40" path="res://team404/dresser.png" id="3_2am70"]
+[ext_resource type="Script" path="res://dialogue1.gd" id="3_j3gw8"]
+[ext_resource type="Script" path="res://dialogue2.gd" id="4_i18k1"]
 [ext_resource type="Texture2D" uid="uid://osq8cdvkn2s3" path="res://team404/dresser_hover.png" id="4_p5qij"]
+[ext_resource type="Script" path="res://sleep_options.gd" id="4_ruk03"]
+[ext_resource type="Script" path="res://dialogue3.gd" id="5_a87tk"]
 [ext_resource type="Texture2D" uid="uid://de58xi8j5gx2l" path="res://team404/lamp.png" id="5_mgylb"]
 [ext_resource type="Texture2D" uid="uid://cpsv0rkfknvo8" path="res://team404/lamp_hover.png" id="6_hvfn2"]
+[ext_resource type="Script" path="res://sleep.gd" id="6_m1x88"]
+[ext_resource type="Script" path="res://itemButtons.gd" id="8_cli1x"]
+[ext_resource type="Script" path="res://personal_options.gd" id="8_hqsh2"]
 [ext_resource type="Texture2D" uid="uid://cyi8cwdwv37oj" path="res://team404/door.png" id="8_u5gne"]
+[ext_resource type="Script" path="res://wardrobe.gd" id="9_345wl"]
+[ext_resource type="Script" path="res://car.gd" id="9_kg1xa"]
+[ext_resource type="Script" path="res://education.gd" id="9_pp4at"]
 [ext_resource type="Texture2D" uid="uid://ci8e5por4q57y" path="res://team404/door_hover.png" id="9_usygt"]
+[ext_resource type="Script" path="res://work_options.gd" id="13_pdv78"]
+[ext_resource type="Texture2D" uid="uid://brf7wkhtkrvog" path="res://team404/light.png" id="15_7vvyf"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="16_bwmnl"]
+[ext_resource type="Script" path="res://work.gd" id="17_tw6vh"]
+[ext_resource type="Script" path="res://hookey.gd" id="18_2oq7t"]
+[ext_resource type="Script" path="res://door.gd" id="20_lc0cy"]
+[ext_resource type="Script" path="res://already_clicked.gd" id="23_amisu"]
+[ext_resource type="Script" path="res://status.gd" id="29_ahrwo"]
+[ext_resource type="Script" path="res://days.gd" id="29_rfou5"]
+[ext_resource type="Script" path="res://money.gd" id="29_u1xqd"]
+[ext_resource type="Script" path="res://ending_sequence.gd" id="32_i62qq"]
+[ext_resource type="Script" path="res://losing_sequence.gd" id="33_etcda"]
+[ext_resource type="PackedScene" uid="uid://yos81wm2sqck" path="res://node_2d_Aminat2.tscn" id="33_gadv0"]
+[ext_resource type="Script" path="res://PaydayEvent.gd" id="35_uiwda"]
+[ext_resource type="Script" path="res://TermChoice.gd" id="36_38x1q"]
+[ext_resource type="Script" path="res://CreditCardEvent.gd" id="36_rgd6n"]
+[ext_resource type="Script" path="res://UL_Choice.gd" id="36_rndko"]
+[ext_resource type="Script" path="res://LifeInsuranceEvent.gd" id="37_tuu6m"]
+[ext_resource type="Script" path="res://MattressChoice.gd" id="38_d04am"]
+[ext_resource type="Script" path="res://IUL_Choice.gd" id="39_dkxeh"]
+[ext_resource type="Script" path="res://new_CardChoice.gd" id="42_3v8cl"]
+[ext_resource type="Script" path="res://extraCardFact.gd" id="43_xfckn"]
+[ext_resource type="Script" path="res://no_CardChoice.gd" id="45_8p7s6"]
+[ext_resource type="Script" path="res://InvestChoice.gd" id="46_e18wr"]
+[ext_resource type="Script" path="res://BankChoice.gd" id="47_ewhga"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_mhhqi")
+
+[node name="title_sequence" type="Sprite2D" parent="."]
+z_index = 13
+script = ExtResource("2_ilaxd")
+
+[node name="ColorRect" type="ColorRect" parent="title_sequence"]
+z_index = 10
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 1560.0
+offset_bottom = 656.0
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+
+[node name="dialogue1" type="Label" parent="title_sequence/ColorRect"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 240.0
+offset_right = 1130.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 28
+text = "You have just received an inheritance of $5,000."
+script = ExtResource("3_j3gw8")
+
+[node name="exit" type="Button" parent="title_sequence/ColorRect/dialogue1"]
+z_index = 3
+layout_mode = 0
+offset_left = 832.0
+offset_top = -224.0
+offset_right = 1040.0
+offset_bottom = -112.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+theme_override_font_sizes/font_size = 28
+text = "Next >"
+
+[node name="dialogue2" type="Label" parent="title_sequence/ColorRect"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 240.0
+offset_right = 1184.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 28
+text = "You suspect foul play in your grandmother's death. 
+Her suspected assailant received the bulk of her 
+wealth."
+script = ExtResource("4_i18k1")
+
+[node name="exit2" type="Button" parent="title_sequence/ColorRect/dialogue2"]
+z_index = 3
+layout_mode = 0
+offset_left = 832.0
+offset_top = -224.0
+offset_right = 1040.0
+offset_bottom = -112.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+theme_override_font_sizes/font_size = 28
+text = "Next >"
+
+[node name="dialogue3" type="Label" parent="title_sequence/ColorRect"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 240.0
+offset_right = 1130.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 28
+text = "You spend some money on an apartment. You'll
+need way more money before you can bring the
+murderer to justice. $100,000 should be enough 
+to lawyer up."
+script = ExtResource("5_a87tk")
+
+[node name="exit3" type="Button" parent="title_sequence/ColorRect/dialogue3"]
+z_index = 3
+layout_mode = 0
+offset_left = 832.0
+offset_top = -224.0
+offset_right = 1040.0
+offset_bottom = -112.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+theme_override_font_sizes/font_size = 28
+text = "Next >"
 
 [node name="Background" type="Sprite2D" parent="."]
 z_as_relative = false
-position = Vector2(776, 320)
-scale = Vector2(2.15, 2.15)
+position = Vector2(776, 318.75)
+scale = Vector2(2.15, 2.14167)
 texture = ExtResource("1_q0rvx")
+script = ExtResource("2_oxkay")
 
 [node name="itemButtons" type="Control" parent="."]
 layout_mode = 3
@@ -25,14 +148,15 @@ offset_left = 101.0
 offset_top = 50.0
 offset_right = 141.0
 offset_bottom = 90.0
+script = ExtResource("8_cli1x")
 
 [node name="bed" type="TextureButton" parent="itemButtons"]
 z_index = 2
 layout_mode = 0
 offset_left = 499.0
-offset_top = 134.0
+offset_top = 126.0
 offset_right = 852.0
-offset_bottom = 354.0
+offset_bottom = 346.0
 scale = Vector2(2.15, 2.15)
 tooltip_text = "Go to Sleep?"
 texture_normal = ExtResource("1_6vmig")
@@ -40,15 +164,16 @@ texture_pressed = ExtResource("1_6vmig")
 texture_hover = ExtResource("2_d71hv")
 ignore_texture_size = true
 
-[node name="ColorRect" type="ColorRect" parent="itemButtons/bed"]
+[node name="sleep_options" type="ColorRect" parent="itemButtons/bed"]
 layout_mode = 0
-offset_left = -78.0
-offset_top = 33.0
-offset_right = 142.0
-offset_bottom = 122.0
+offset_left = -26.0465
+offset_top = 14.8837
+offset_right = 193.953
+offset_bottom = 103.884
 color = Color(0.0941176, 0.0980392, 0.101961, 1)
+script = ExtResource("4_ruk03")
 
-[node name="Label" type="Label" parent="itemButtons/bed/ColorRect"]
+[node name="Label" type="Label" parent="itemButtons/bed/sleep_options"]
 layout_mode = 0
 offset_left = 3.30232
 offset_top = 3.48837
@@ -60,7 +185,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 text = "Would you like to sleep and 
 proceed to the next day?"
 
-[node name="Yes" type="Button" parent="itemButtons/bed/ColorRect/Label"]
+[node name="Yes" type="Button" parent="itemButtons/bed/sleep_options/Label"]
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.111
@@ -72,7 +197,38 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
 text = "Yes"
 
-[node name="No" type="Button" parent="itemButtons/bed/ColorRect/Label"]
+[node name="sleep" type="ColorRect" parent="itemButtons/bed/sleep_options/Label/Yes"]
+z_index = 1
+layout_mode = 0
+offset_left = -21.9767
+offset_top = -44.7674
+offset_right = 157.023
+offset_bottom = 34.2326
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+script = ExtResource("6_m1x88")
+
+[node name="Label" type="Label" parent="itemButtons/bed/sleep_options/Label/Yes/sleep"]
+layout_mode = 0
+offset_left = 3.76746
+offset_top = 0.488381
+offset_right = 174.767
+offset_bottom = 49.4884
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "You sleep through the
+night. It's a new day!"
+
+[node name="ok7" type="Button" parent="itemButtons/bed/sleep_options/Label/Yes/sleep/Label"]
+layout_mode = 0
+offset_left = 70.6511
+offset_top = 44.1628
+offset_right = 101.651
+offset_bottom = 75.1628
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "OK"
+
+[node name="No" type="Button" parent="itemButtons/bed/sleep_options/Label"]
 layout_mode = 0
 offset_left = 123.209
 offset_top = 44.8837
@@ -85,10 +241,10 @@ text = "No"
 [node name="dresser" type="TextureButton" parent="itemButtons"]
 z_index = 1
 layout_mode = 0
-offset_left = 291.0
-offset_top = 78.0
-offset_right = 418.0
-offset_bottom = 298.0
+offset_left = 283.0
+offset_top = 62.0
+offset_right = 410.0
+offset_bottom = 282.0
 scale = Vector2(2.15, 2.15)
 tooltip_text = "Personal Investments?"
 texture_normal = ExtResource("3_2am70")
@@ -96,21 +252,180 @@ texture_pressed = ExtResource("3_2am70")
 texture_hover = ExtResource("4_p5qij")
 ignore_texture_size = true
 
-[node name="dresserMenu" type="PopupMenu" parent="itemButtons/dresser"]
+[node name="personal_options" type="ColorRect" parent="itemButtons/dresser"]
+z_index = 2
+layout_mode = 0
+offset_left = 59.5349
+offset_top = 7.44186
+offset_right = 297.535
+offset_bottom = 160.442
+color = Color(0.0941176, 0.0980392, 0.101961, 1)
+script = ExtResource("8_hqsh2")
+
+[node name="Label" type="Label" parent="itemButtons/dresser/personal_options"]
+z_index = 2
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 232.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.494118, 0.227451, 0.87451, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "How would you like to invest?"
+
+[node name="Upgrade_car" type="Button" parent="itemButtons/dresser/personal_options/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.111
+offset_left = 12.1395
+offset_top = 30.6977
+offset_right = 53.1395
+offset_bottom = 58.3677
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "Upgrade Car"
+
+[node name="car" type="ColorRect" parent="itemButtons/dresser/personal_options/Label/Upgrade_car"]
+z_index = 2
+layout_mode = 0
+offset_left = 51.8372
+offset_top = 59.3256
+offset_right = 170.837
+offset_bottom = 118.326
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+script = ExtResource("9_kg1xa")
+
+[node name="Label" type="Label" parent="itemButtons/dresser/personal_options/Label/Upgrade_car/car"]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 115.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "Car Upgraded!"
+
+[node name="ok1" type="Button" parent="itemButtons/dresser/personal_options/Label/Upgrade_car/car/Label"]
+layout_mode = 0
+offset_left = 36.9302
+offset_top = 26.0465
+offset_right = 67.9302
+offset_bottom = 57.0465
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "OK"
+
+[node name="upgrade_wardrobe" type="Button" parent="itemButtons/dresser/personal_options/Label"]
+layout_mode = 0
+offset_left = 11.8837
+offset_top = 56.5349
+offset_right = 167.884
+offset_bottom = 87.5349
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "Upgrade Wardrobe"
+
+[node name="wardrobe" type="ColorRect" parent="itemButtons/dresser/personal_options/Label/upgrade_wardrobe"]
+z_index = 2
+layout_mode = 0
+offset_left = 22.3256
+offset_top = -18.6047
+offset_right = 193.326
+offset_bottom = 37.3953
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+script = ExtResource("9_345wl")
+
+[node name="Label" type="Label" parent="itemButtons/dresser/personal_options/Label/upgrade_wardrobe/wardrobe"]
+z_index = 2
+layout_mode = 0
+offset_left = 3.74419
+offset_top = -0.209301
+offset_right = 165.744
+offset_bottom = 22.7907
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "Wardrobe Upgraded!"
+
+[node name="ok2" type="Button" parent="itemButtons/dresser/personal_options/Label/upgrade_wardrobe/wardrobe/Label"]
+layout_mode = 0
+offset_left = 63.2558
+offset_top = 22.3256
+offset_right = 94.2558
+offset_bottom = 53.3256
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "OK"
+
+[node name="upgrade_education" type="Button" parent="itemButtons/dresser/personal_options/Label"]
+layout_mode = 0
+offset_left = 12.1395
+offset_top = 82.7907
+offset_right = 168.14
+offset_bottom = 113.791
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "Upgrade Education"
+
+[node name="education" type="ColorRect" parent="itemButtons/dresser/personal_options/Label/upgrade_education"]
+z_index = 2
+layout_mode = 0
+offset_left = 36.9535
+offset_top = -44.8605
+offset_right = 178.954
+offset_bottom = 15.1395
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+script = ExtResource("9_pp4at")
+
+[node name="Label" type="Label" parent="itemButtons/dresser/personal_options/Label/upgrade_education/education"]
+z_index = 2
+layout_mode = 0
+offset_left = 3.72093
+offset_top = 1.42008e-05
+offset_right = 139.721
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "Degree Obtained!"
+
+[node name="ok3" type="Button" parent="itemButtons/dresser/personal_options/Label/upgrade_education/education/Label"]
+layout_mode = 0
+offset_left = 52.093
+offset_top = 26.0465
+offset_right = 83.093
+offset_bottom = 57.0465
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "OK"
+
+[node name="quit" type="Button" parent="itemButtons/dresser/personal_options/Label"]
+layout_mode = 0
+offset_left = 11.8837
+offset_top = 108.628
+offset_right = 53.8837
+offset_bottom = 139.628
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "Quit"
 
 [node name="lamp" type="TextureButton" parent="itemButtons"]
 z_index = 3
 layout_mode = 0
 offset_left = 1179.0
-offset_top = 222.0
+offset_top = 214.0
 offset_right = 1268.0
-offset_bottom = 397.0
+offset_bottom = 389.0
 scale = Vector2(2.15, 2.15)
-tooltip_text = "Personal Investment?"
 texture_normal = ExtResource("5_mgylb")
 texture_pressed = ExtResource("5_mgylb")
 texture_hover = ExtResource("6_hvfn2")
 ignore_texture_size = true
+
+[node name="light" type="Sprite2D" parent="itemButtons/lamp"]
+z_index = -1
+position = Vector2(48.3721, 22.3256)
+scale = Vector2(0.299197, 0.252839)
+texture = ExtResource("15_7vvyf")
+script = ExtResource("16_bwmnl")
 
 [node name="door" type="TextureButton" parent="itemButtons"]
 z_index = 1
@@ -124,5 +439,820 @@ tooltip_text = "Go to work?"
 texture_normal = ExtResource("8_u5gne")
 texture_pressed = ExtResource("8_u5gne")
 texture_hover = ExtResource("9_usygt")
+script = ExtResource("20_lc0cy")
 
-[node name="doorMenu" type="PopupMenu" parent="itemButtons/door"]
+[node name="work_options" type="ColorRect" parent="itemButtons/door"]
+z_index = 2
+layout_mode = 0
+offset_left = 234.419
+offset_top = 26.0465
+offset_right = 454.419
+offset_bottom = 115.047
+color = Color(0.0941176, 0.0980392, 0.101961, 1)
+script = ExtResource("13_pdv78")
+
+[node name="Label" type="Label" parent="itemButtons/door/work_options"]
+z_index = 2
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 216.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.494118, 0.227451, 0.87451, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "What would you like to do?"
+
+[node name="Go to Work" type="Button" parent="itemButtons/door/work_options/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.111
+offset_left = -3.0
+offset_top = 23.0
+offset_right = 217.0
+offset_bottom = 50.67
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "Go to Work"
+
+[node name="work" type="ColorRect" parent="itemButtons/door/work_options/Label/Go to Work"]
+z_index = 2
+layout_mode = 0
+offset_top = 14.9302
+offset_right = 216.0
+offset_bottom = 100.93
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+script = ExtResource("17_tw6vh")
+
+[node name="Label" type="Label" parent="itemButtons/door/work_options/Label/Go to Work/work"]
+layout_mode = 0
+offset_top = 3.72092
+offset_right = 205.0
+offset_bottom = 52.7209
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "You go to work for the day
+and collect your salary."
+
+[node name="ok4" type="Button" parent="itemButtons/door/work_options/Label/Go to Work/work/Label"]
+layout_mode = 0
+offset_left = 93.0233
+offset_top = 52.093
+offset_right = 124.023
+offset_bottom = 83.093
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "OK"
+
+[node name="Play Hookey" type="Button" parent="itemButtons/door/work_options/Label"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 49.0
+offset_right = 217.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "Play Hookey"
+
+[node name="hookey" type="ColorRect" parent="itemButtons/door/work_options/Label/Play Hookey"]
+layout_mode = 0
+offset_left = -11.1628
+offset_top = -11.0698
+offset_right = 230.837
+offset_bottom = 70.9302
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+script = ExtResource("18_2oq7t")
+
+[node name="Label" type="Label" parent="itemButtons/door/work_options/Label/Play Hookey/hookey"]
+layout_mode = 0
+offset_left = 3.72093
+offset_right = 239.721
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "You decide to skip work today.
+You won't get paid for today."
+
+[node name="ok5" type="Button" parent="itemButtons/door/work_options/Label/Play Hookey/hookey/Label"]
+layout_mode = 0
+offset_left = 100.697
+offset_top = 48.3023
+offset_right = 131.697
+offset_bottom = 79.3023
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "OK"
+
+[node name="already_clicked" type="ColorRect" parent="itemButtons/door"]
+z_index = 5
+layout_mode = 0
+offset_left = 253.023
+offset_top = 55.8139
+offset_right = 420.023
+offset_bottom = 133.814
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+script = ExtResource("23_amisu")
+
+[node name="Label" type="Label" parent="itemButtons/door/already_clicked"]
+layout_mode = 0
+offset_left = 3.72093
+offset_right = 164.721
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "You've already made
+a decision today!"
+
+[node name="ok8" type="Button" parent="itemButtons/door/already_clicked/Label"]
+layout_mode = 0
+offset_left = 63.5349
+offset_top = 44.6512
+offset_right = 94.5349
+offset_bottom = 75.6512
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+text = "OK"
+
+[node name="counters" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 101.0
+offset_top = 50.0
+offset_right = 141.0
+offset_bottom = 90.0
+
+[node name="money" type="ColorRect" parent="counters"]
+layout_mode = 0
+offset_left = 459.0
+offset_top = -42.0
+offset_right = 603.0
+offset_bottom = 6.0
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+script = ExtResource("29_u1xqd")
+
+[node name="money_display" type="Label" parent="counters/money"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="status" type="ColorRect" parent="counters"]
+layout_mode = 0
+offset_left = 283.0
+offset_top = -42.0
+offset_right = 435.0
+offset_bottom = 6.0
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+script = ExtResource("29_ahrwo")
+
+[node name="status_display" type="Label" parent="counters/status"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="days" type="ColorRect" parent="counters"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = -42.0
+offset_right = 259.0
+offset_bottom = 6.0
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+script = ExtResource("29_rfou5")
+
+[node name="days_display" type="Label" parent="counters/days"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 26
+
+[node name="ending_sequence" type="Sprite2D" parent="."]
+script = ExtResource("32_i62qq")
+
+[node name="ColorRect" type="ColorRect" parent="ending_sequence"]
+offset_left = -64.0
+offset_top = -40.0
+offset_right = 1584.0
+offset_bottom = 688.0
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+
+[node name="Label" type="Label" parent="ending_sequence"]
+offset_left = 520.0
+offset_top = 264.0
+offset_right = 1066.0
+offset_bottom = 331.0
+theme_override_font_sizes/font_size = 23
+text = "That's enough! You have plenty of money now
+to bring the murderer to justice. "
+
+[node name="exit4" type="Button" parent="ending_sequence/Label"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 168.0
+offset_right = 344.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+theme_override_font_sizes/font_size = 23
+text = "Well Done!"
+
+[node name="losing_sequence" type="Sprite2D" parent="."]
+z_index = 14
+script = ExtResource("33_etcda")
+
+[node name="ColorRect" type="ColorRect" parent="losing_sequence"]
+offset_left = -16.0
+offset_top = -8.0
+offset_right = 1576.0
+offset_bottom = 664.0
+color = Color(0.0956479, 0.097043, 0.100869, 1)
+
+[node name="Label" type="Label" parent="losing_sequence/ColorRect"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 272.0
+offset_right = 1010.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 23
+text = "Game Over! You've gone bankrupt!"
+
+[node name="exit4" type="Button" parent="losing_sequence/ColorRect/Label"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 264.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.227451, 0.87451, 1)
+theme_override_font_sizes/font_size = 23
+text = ":("
+
+[node name="Node2D_Aminat" parent="." instance=ExtResource("33_gadv0")]
+
+[node name="UL_Choice" type="ColorRect" parent="."]
+z_index = 52
+offset_left = 358.0
+offset_top = 227.0
+offset_right = 765.0
+offset_bottom = 367.0
+color = Color(0.04, 0.04, 0.04, 1)
+script = ExtResource("36_rndko")
+
+[node name="Label" type="Label" parent="UL_Choice"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 390.0
+offset_bottom = 132.0
+text = "Universal Life Insurance.
+A policy that's perfect for a long and healthy life 
+as long as you pay the pretty penny that is the
+premium."
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="UL_Choice/Label"]
+anchors_preset = 0
+offset_left = 227.0
+offset_top = 171.0
+offset_right = 267.0
+offset_bottom = 211.0
+
+[node name="exit_UL" type="Button" parent="UL_Choice/Label/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.275
+anchor_top = -1.8
+anchor_right = 3.799
+anchor_bottom = -0.95
+offset_left = 7.0
+offset_top = -3.0
+offset_right = 12.04
+offset_bottom = -5.0
+text = "X"
+
+[node name="TermChoice" type="ColorRect" parent="."]
+z_index = 52
+offset_left = 399.0
+offset_top = 232.0
+offset_right = 732.0
+offset_bottom = 363.0
+color = Color(0.08, 0.08, 0.08, 1)
+script = ExtResource("36_38x1q")
+
+[node name="Label" type="Label" parent="TermChoice"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 335.0
+offset_bottom = 124.0
+text = "Great for impending doom, but only
+for 30 or 40 years  depending on the
+insurer.
+Pretty cheap premium though"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="TermChoice/Label"]
+anchors_preset = 0
+offset_left = 544.0
+offset_top = 180.0
+offset_right = 584.0
+offset_bottom = 220.0
+
+[node name="exit_term" type="Button" parent="TermChoice/Label/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.875
+anchor_top = -2.0
+anchor_right = -5.3
+anchor_bottom = -1.225
+offset_left = -1.99998
+offset_top = -8.0
+offset_right = -2.0
+offset_bottom = -8.0
+text = "X"
+
+[node name="MattressChoice" type="ColorRect" parent="."]
+z_index = 52
+offset_left = 341.0
+offset_top = 236.0
+offset_right = 777.0
+offset_bottom = 351.0
+color = Color(0.0680167, 0.07, 0.0462, 1)
+script = ExtResource("38_d04am")
+
+[node name="Label" type="Label" parent="MattressChoice"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 428.0
+offset_bottom = 108.0
+text = "Unfornately, inflation exists.
+Money that's not in an assest or an account
+loses value due to inflation.
+Called Devaluation."
+horizontal_alignment = 1
+justification_flags = 171
+
+[node name="exitMattress" type="Button" parent="MattressChoice/Label"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 79.0
+offset_right = 427.0
+offset_bottom = 110.0
+text = "X"
+
+[node name="IUL_Choice" type="ColorRect" parent="."]
+z_index = 52
+offset_left = 590.0
+offset_top = 436.0
+offset_right = 1047.0
+offset_bottom = 601.0
+color = Color(0.03, 0.03, 0.03, 1)
+script = ExtResource("39_dkxeh")
+
+[node name="Label" type="Label" parent="IUL_Choice"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 13.0
+offset_right = 432.0
+offset_bottom = 153.0
+text = "Index Universal Life Insurance
+The 'sliced bread' of Life Insurance
+perfect for a long and happy life and even
+better you pay the pretty penny for a bit.
+And it pays you back!"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="IUL_Choice/Label"]
+anchors_preset = 0
+offset_left = 151.0
+offset_top = 109.0
+offset_right = 191.0
+offset_bottom = 149.0
+
+[node name="exit_IUL" type="Button" parent="IUL_Choice/Label/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.225
+anchor_right = 6.925
+anchor_bottom = 0.875
+offset_left = -1.52588e-05
+offset_top = 10.0
+offset_bottom = 8.0
+text = "X"
+
+[node name="PaydayEvent" type="ColorRect" parent="."]
+z_index = 50
+offset_left = 249.0
+offset_top = 219.0
+offset_right = 857.0
+offset_bottom = 375.0
+color = Color(0.860667, 0.62, 1, 1)
+script = ExtResource("35_uiwda")
+
+[node name="PAYDAY" type="Label" parent="PaydayEvent"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 596.0
+offset_bottom = 84.0
+text = "You have received your two weeks pay! You want to save 20% of the money
+
+How do you save it?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="PaydayEvent/PAYDAY"]
+layout_mode = 1
+anchor_top = 0.32
+anchor_right = 0.334
+anchor_bottom = 0.533
+offset_left = 260.0
+offset_top = 64.12
+offset_right = 150.612
+offset_bottom = 143.567
+
+[node name="Bank" type="Button" parent="PaydayEvent/PAYDAY/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.15
+anchor_top = 0.329
+anchor_right = 1.0
+anchor_bottom = 0.591
+offset_left = -7.25
+offset_top = -18.2471
+offset_right = 2.75
+offset_bottom = -14.6474
+action_mode = 0
+button_mask = 0
+text = "Bank"
+
+[node name="Invest" type="Button" parent="PaydayEvent/PAYDAY/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.85
+anchor_top = 0.338
+anchor_right = -0.55
+anchor_bottom = 0.599
+offset_left = 6.25002
+offset_top = -18.9006
+offset_right = 11.25
+offset_bottom = -13.3061
+text = "Investments"
+
+[node name="Bedding" type="Button" parent="PaydayEvent/PAYDAY/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.487
+anchor_top = 0.329
+anchor_right = 2.45
+anchor_bottom = 0.5
+offset_left = -23.395
+offset_top = -18.0245
+offset_right = 7.565
+offset_bottom = -3.66951
+text = "Mattress"
+
+[node name="CreditCardEvent" type="ColorRect" parent="."]
+z_index = 50
+offset_left = 278.0
+offset_top = 222.0
+offset_right = 827.0
+offset_bottom = 399.0
+color = Color(0.858824, 0.619608, 1, 1)
+script = ExtResource("36_rgd6n")
+
+[node name="Label" type="Label" parent="CreditCardEvent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.231
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = 4.0
+offset_right = 393.181
+offset_bottom = 68.5
+text = "Your mail arrived this morning.
+And, drumroll please
+It's yet another credit card company asking you to get
+a new credit card.
+Do you get a new credit card?
+"
+horizontal_alignment = 1
+
+[node name="Yes" type="Button" parent="CreditCardEvent/Label"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 134.0
+offset_right = 217.0
+offset_bottom = 165.0
+text = "Yes"
+
+[node name="No" type="Button" parent="CreditCardEvent/Label"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 135.0
+offset_right = 457.0
+offset_bottom = 166.0
+text = "No"
+
+[node name="new_CardChoice" type="ColorRect" parent="."]
+z_index = 52
+offset_left = 331.0
+offset_top = 199.0
+offset_right = 761.0
+offset_bottom = 419.0
+color = Color(0.05, 0.05, 0.05, 1)
+script = ExtResource("42_3v8cl")
+
+[node name="Label" type="Label" parent="new_CardChoice"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 8.0
+offset_right = 407.0
+offset_bottom = 213.0
+text = "The correct answer was no.
+Unless you want to earn a credit score.
+Then...
+YOU. PAY. IN. FULL. 
+(unless you can't)
+Make those cred
+it card companies regret making
+you get a new credit card!"
+horizontal_alignment = 1
+
+[node name="exit_newCard" type="Button" parent="new_CardChoice/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.037
+anchor_top = 0.924
+anchor_right = 1.084
+anchor_bottom = 1.031
+offset_left = -18.134
+offset_top = -15.42
+offset_right = -11.088
+offset_bottom = 0.20903
+text = "X"
+
+[node name="extraCardFact" type="ColorRect" parent="."]
+z_index = 54
+offset_left = 362.0
+offset_top = 231.0
+offset_right = 740.0
+offset_bottom = 393.0
+color = Color(0.03, 0.03, 0.03, 1)
+script = ExtResource("43_xfckn")
+
+[node name="Label" type="Label" parent="extraCardFact"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 14.0
+offset_right = 375.0
+offset_bottom = 141.0
+text = "Fun Fact:
+If you have fully paid off your credit
+card and stop using it the credit
+card company will cancel the card for you
+No harmed credit score required"
+horizontal_alignment = 1
+
+[node name="exit_extraCard" type="Button" parent="extraCardFact/Label"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 117.0
+offset_right = 374.0
+offset_bottom = 148.0
+text = "X"
+
+[node name="LifeInsuranceEvent" type="ColorRect" parent="."]
+z_index = 50
+offset_left = 300.0
+offset_top = 220.0
+offset_right = 834.0
+offset_bottom = 376.0
+color = Color(0.860667, 0.62, 1, 1)
+script = ExtResource("37_tuu6m")
+
+[node name="Life Insurance" type="Label" parent="LifeInsuranceEvent"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = 9.0
+offset_right = 555.0
+offset_bottom = 93.0
+text = "You want to leave your family some money...
+Just in case. And you're feeling stable.
+What Life Insurance Policy are you getting?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="LifeInsuranceEvent/Life Insurance"]
+layout_mode = 1
+anchor_top = 0.32
+anchor_right = 0.334
+anchor_bottom = 0.533
+offset_left = 255.0
+offset_top = 57.12
+offset_right = 145.612
+offset_bottom = 136.567
+
+[node name="Universal Life" type="Button" parent="LifeInsuranceEvent/Life Insurance/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.282
+anchor_top = 0.092
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -3.03
+offset_top = 3.0448
+offset_right = 3.5
+offset_bottom = -5.66951
+text = "Univ. Life"
+
+[node name="Sliced Bread" type="Button" parent="LifeInsuranceEvent/Life Insurance/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.487
+anchor_top = 0.092
+anchor_right = 2.659
+anchor_bottom = 0.5
+offset_left = -21.395
+offset_top = 4.04481
+offset_right = 8.98499
+offset_bottom = -4.66951
+text = "Index Univ. Life"
+
+[node name="Term" type="Button" parent="LifeInsuranceEvent/Life Insurance/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.953
+anchor_top = 0.123
+anchor_right = -0.796
+anchor_bottom = 0.442
+offset_left = 0.00500488
+offset_top = 0.0273018
+offset_right = 17.66
+offset_bottom = -0.0238419
+text = "Incr./Decr. Term"
+
+[node name="no_CardChoice" type="ColorRect" parent="."]
+z_index = 52
+offset_left = 373.0
+offset_top = 253.0
+offset_right = 729.0
+offset_bottom = 381.0
+color = Color(0.04, 0.04, 0.04, 1)
+script = ExtResource("45_8p7s6")
+
+[node name="Label" type="Label" parent="no_CardChoice"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 342.0
+offset_bottom = 104.0
+text = "Congrats you dodged the loan card
+Clap for yourself,
+but not for your Credit Score"
+horizontal_alignment = 1
+
+[node name="exit_noCard" type="Button" parent="no_CardChoice/Label"]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 72.0
+offset_right = 339.0
+offset_bottom = 103.0
+text = "X"
+
+[node name="InvestChoice" type="ColorRect" parent="."]
+z_index = 52
+offset_left = 339.0
+offset_top = 236.0
+offset_right = 775.0
+offset_bottom = 351.0
+color = Color(0.0680167, 0.07, 0.0462, 1)
+script = ExtResource("46_e18wr")
+
+[node name="Label" type="Label" parent="InvestChoice"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 431.0
+offset_bottom = 115.0
+text = "Investments long term have a high yield. However
+ be wary of the volitile market"
+horizontal_alignment = 1
+justification_flags = 171
+
+[node name="exitInvest" type="Button" parent="InvestChoice/Label"]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 69.0
+offset_right = 435.0
+offset_bottom = 100.0
+text = "X"
+
+[node name="BankChoice" type="ColorRect" parent="."]
+z_index = 60
+offset_left = 334.0
+offset_top = 239.0
+offset_right = 770.0
+offset_bottom = 354.0
+color = Color(0.0680167, 0.07, 0.0462, 1)
+script = ExtResource("47_ewhga")
+
+[node name="Label" type="Label" parent="BankChoice"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 433.0
+offset_bottom = 117.0
+text = "Saving your money through a bank is a common route.
+However it can lead to little to no yield, depending on 
+the return rates"
+horizontal_alignment = 1
+justification_flags = 171
+
+[node name="exitBank" type="Button" parent="BankChoice/Label"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 81.0
+offset_right = 433.0
+offset_bottom = 112.0
+text = "X"
+
+[connection signal="pressed" from="title_sequence/ColorRect/dialogue1/exit" to="title_sequence/ColorRect/dialogue1" method="_on_exit_pressed"]
+[connection signal="pressed" from="title_sequence/ColorRect/dialogue1/exit" to="title_sequence/ColorRect/dialogue2" method="_on_exit_pressed"]
+[connection signal="pressed" from="title_sequence/ColorRect/dialogue2/exit2" to="title_sequence/ColorRect/dialogue2" method="_on_exit_2_pressed"]
+[connection signal="pressed" from="title_sequence/ColorRect/dialogue2/exit2" to="title_sequence/ColorRect/dialogue3" method="_on_exit_2_pressed"]
+[connection signal="pressed" from="title_sequence/ColorRect/dialogue3/exit3" to="title_sequence" method="_on_exit_3_pressed"]
+[connection signal="pressed" from="title_sequence/ColorRect/dialogue3/exit3" to="title_sequence/ColorRect/dialogue3" method="_on_exit_3_pressed"]
+[connection signal="pressed" from="itemButtons/bed" to="itemButtons/bed/sleep_options" method="_on_bed_pressed"]
+[connection signal="pressed" from="itemButtons/bed/sleep_options/Label/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="itemButtons/bed/sleep_options/Label/Yes" to="itemButtons/bed/sleep_options/Label/Yes/sleep" method="_on_yes_pressed"]
+[connection signal="pressed" from="itemButtons/bed/sleep_options/Label/Yes" to="itemButtons/door" method="_on_yes_pressed"]
+[connection signal="pressed" from="itemButtons/bed/sleep_options/Label/Yes" to="counters/days" method="_on_yes_pressed"]
+[connection signal="pressed" from="itemButtons/bed/sleep_options/Label/Yes/sleep/Label/ok7" to="itemButtons/bed/sleep_options" method="_on_ok_7_pressed"]
+[connection signal="pressed" from="itemButtons/bed/sleep_options/Label/Yes/sleep/Label/ok7" to="itemButtons/bed/sleep_options/Label/Yes/sleep" method="_on_ok_7_pressed"]
+[connection signal="pressed" from="itemButtons/bed/sleep_options/Label/No" to="itemButtons/bed/sleep_options" method="_on_no_pressed"]
+[connection signal="pressed" from="itemButtons/dresser" to="itemButtons/dresser/personal_options" method="_on_dresser_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/Upgrade_car" to="itemButtons/dresser/personal_options/Label/Upgrade_car/car" method="_on_upgrade_car_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/Upgrade_car" to="counters/status" method="_on_upgrade_car_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/Upgrade_car/car/Label/ok1" to="itemButtons/dresser/personal_options" method="_on_ok_1_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/Upgrade_car/car/Label/ok1" to="itemButtons/dresser/personal_options/Label/Upgrade_car/car" method="_on_ok_1_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/upgrade_wardrobe" to="itemButtons/dresser/personal_options/Label/upgrade_wardrobe/wardrobe" method="_on_upgrade_wardrobe_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/upgrade_wardrobe" to="counters/status" method="_on_upgrade_wardrobe_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/upgrade_wardrobe/wardrobe/Label/ok2" to="itemButtons/dresser/personal_options" method="_on_ok_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/upgrade_wardrobe/wardrobe/Label/ok2" to="itemButtons/dresser/personal_options/Label/upgrade_wardrobe/wardrobe" method="_on_ok_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/upgrade_education" to="itemButtons/dresser/personal_options/Label/upgrade_education/education" method="_on_upgrade_education_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/upgrade_education" to="counters/status" method="_on_upgrade_education_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/upgrade_education/education/Label/ok3" to="itemButtons/dresser/personal_options" method="_on_ok_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/upgrade_education/education/Label/ok3" to="itemButtons/dresser/personal_options/Label/upgrade_education/education" method="_on_ok_pressed"]
+[connection signal="pressed" from="itemButtons/dresser/personal_options/Label/quit" to="itemButtons/dresser/personal_options" method="_on_quit_pressed"]
+[connection signal="button_down" from="itemButtons/lamp" to="itemButtons/lamp/light" method="_on_lamp_button_down"]
+[connection signal="button_up" from="itemButtons/lamp" to="itemButtons/lamp/light" method="_on_lamp_button_up"]
+[connection signal="pressed" from="itemButtons/door" to="." method="_on_door_pressed"]
+[connection signal="pressed" from="itemButtons/door" to="itemButtons/door/work_options" method="_on_door_pressed"]
+[connection signal="pressed" from="itemButtons/door" to="itemButtons/door/already_clicked" method="_on_door_pressed"]
+[connection signal="to_already_clicked" from="itemButtons/door" to="itemButtons/door/already_clicked" method="_on_door_to_already_clicked"]
+[connection signal="to_node2d" from="itemButtons/door" to="." method="_on_door_to_node_2d"]
+[connection signal="to_work_options" from="itemButtons/door" to="itemButtons/door/work_options" method="_on_door_to_work_options"]
+[connection signal="pressed" from="itemButtons/door/work_options/Label/Go to Work" to="itemButtons/door" method="_on_go_to_work_pressed"]
+[connection signal="pressed" from="itemButtons/door/work_options/Label/Go to Work" to="itemButtons/door/work_options/Label/Go to Work/work" method="_on_go_to_work_pressed"]
+[connection signal="pressed" from="itemButtons/door/work_options/Label/Go to Work" to="counters/money" method="_on_go_to_work_pressed"]
+[connection signal="pressed" from="itemButtons/door/work_options/Label/Go to Work/work/Label/ok4" to="itemButtons/door/work_options" method="_on_ok_4_pressed"]
+[connection signal="pressed" from="itemButtons/door/work_options/Label/Go to Work/work/Label/ok4" to="itemButtons/door/work_options/Label/Go to Work/work" method="_on_ok_4_pressed"]
+[connection signal="pressed" from="itemButtons/door/work_options/Label/Play Hookey" to="itemButtons/door" method="_on_play_hookey_pressed"]
+[connection signal="pressed" from="itemButtons/door/work_options/Label/Play Hookey" to="itemButtons/door/work_options/Label/Play Hookey/hookey" method="_on_play_hookey_pressed"]
+[connection signal="pressed" from="itemButtons/door/work_options/Label/Play Hookey/hookey/Label/ok5" to="itemButtons/door/work_options" method="_on_ok_5_pressed"]
+[connection signal="pressed" from="itemButtons/door/work_options/Label/Play Hookey/hookey/Label/ok5" to="itemButtons/door/work_options/Label/Play Hookey/hookey" method="_on_ok_5_pressed"]
+[connection signal="pressed" from="itemButtons/door/already_clicked/Label/ok8" to="itemButtons/door/work_options" method="_on_ok_8_pressed"]
+[connection signal="pressed" from="itemButtons/door/already_clicked/Label/ok8" to="itemButtons/door/already_clicked" method="_on_ok_8_pressed"]
+[connection signal="game_lost" from="counters/money" to="itemButtons" method="_on_money_game_lost"]
+[connection signal="game_lost" from="counters/money" to="losing_sequence" method="_on_money_game_lost"]
+[connection signal="game_won" from="counters/money" to="itemButtons" method="_on_money_game_won"]
+[connection signal="game_won" from="counters/money" to="ending_sequence" method="_on_money_game_won"]
+[connection signal="to_increase" from="counters/status" to="counters/money" method="_on_status_to_increase"]
+[connection signal="day_passed" from="counters/days" to="Node2D_Aminat" method="_on_days_day_passed"]
+[connection signal="credit_card" from="Node2D_Aminat" to="CreditCardEvent" method="_on_node_2d_aminat_credit_card"]
+[connection signal="lifeInsurance" from="Node2D_Aminat" to="LifeInsuranceEvent" method="_on_node_2d_aminat_life_insurance"]
+[connection signal="payday" from="Node2D_Aminat" to="PaydayEvent" method="_on_node_2d_aminat_payday"]
+[connection signal="pressed" from="UL_Choice/Label/Control/exit_UL" to="UL_Choice" method="_on_exit_ul_pressed"]
+[connection signal="pressed" from="UL_Choice/Label/Control/exit_UL" to="LifeInsuranceEvent" method="_on_exit_ul_pressed"]
+[connection signal="pressed" from="TermChoice/Label/Control/exit_term" to="TermChoice" method="_on_exit_term_pressed"]
+[connection signal="pressed" from="TermChoice/Label/Control/exit_term" to="LifeInsuranceEvent" method="_on_exit_term_pressed"]
+[connection signal="pressed" from="MattressChoice/Label/exitMattress" to="MattressChoice" method="_on_exit_mattress_pressed"]
+[connection signal="pressed" from="MattressChoice/Label/exitMattress" to="PaydayEvent" method="_on_exit_mattress_pressed"]
+[connection signal="pressed" from="IUL_Choice/Label/Control/exit_IUL" to="IUL_Choice" method="_on_exit_iul_pressed"]
+[connection signal="pressed" from="IUL_Choice/Label/Control/exit_IUL" to="LifeInsuranceEvent" method="_on_exit_iul_pressed"]
+[connection signal="pressed" from="PaydayEvent/PAYDAY/Control/Bank" to="BankChoice" method="_on_bank_pressed"]
+[connection signal="pressed" from="PaydayEvent/PAYDAY/Control/Invest" to="InvestChoice" method="_on_invest_pressed"]
+[connection signal="pressed" from="PaydayEvent/PAYDAY/Control/Bedding" to="MattressChoice" method="_on_bedding_pressed"]
+[connection signal="pressed" from="CreditCardEvent/Label/Yes" to="new_CardChoice" method="_on_yes_pressed"]
+[connection signal="pressed" from="CreditCardEvent/Label/No" to="no_CardChoice" method="_on_no_pressed"]
+[connection signal="pressed" from="new_CardChoice/Label/exit_newCard" to="extraCardFact" method="_on_exit_new_card_pressed"]
+[connection signal="pressed" from="extraCardFact/Label/exit_extraCard" to="CreditCardEvent" method="_on_exit_extra_card_pressed"]
+[connection signal="pressed" from="extraCardFact/Label/exit_extraCard" to="new_CardChoice" method="_on_exit_extra_card_pressed"]
+[connection signal="pressed" from="extraCardFact/Label/exit_extraCard" to="extraCardFact" method="_on_exit_extra_card_pressed"]
+[connection signal="pressed" from="extraCardFact/Label/exit_extraCard" to="no_CardChoice" method="_on_exit_extra_card_pressed"]
+[connection signal="pressed" from="LifeInsuranceEvent/Life Insurance/Control/Universal Life" to="UL_Choice" method="_on_universal_life_pressed"]
+[connection signal="button_up" from="LifeInsuranceEvent/Life Insurance/Control/Sliced Bread" to="IUL_Choice" method="_on_sliced_bread_button_up"]
+[connection signal="pressed" from="LifeInsuranceEvent/Life Insurance/Control/Term" to="TermChoice" method="_on_term_pressed"]
+[connection signal="pressed" from="no_CardChoice/Label/exit_noCard" to="extraCardFact" method="_on_exit_no_card_pressed"]
+[connection signal="pressed" from="InvestChoice/Label/exitInvest" to="PaydayEvent" method="_on_exit_invest_pressed"]
+[connection signal="pressed" from="InvestChoice/Label/exitInvest" to="InvestChoice" method="_on_exit_invest_pressed"]
+[connection signal="pressed" from="BankChoice/Label/exitBank" to="PaydayEvent" method="_on_exit_bank_pressed"]
+[connection signal="pressed" from="BankChoice/Label/exitBank" to="BankChoice" method="_on_exit_bank_pressed"]

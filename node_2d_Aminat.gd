@@ -1,37 +1,53 @@
 extends Node2D
+signal credit_card
+signal lifeInsurance
+signal payday
 
+@onready var credit_event = $CreditCardEvent
+@onready var life_insurance = $LifeInsuranceEvent
+func _ready(): 
+	credit_event.visible = false
+	life_insurance.visible = false
+	hide()
 
-
-
-
-
-
-var event = randi_range(0,5)
+#var event = randi_range(0,5)
 
 # Practice Function
-func new_Day() -> void:
-	print(event)
-	match event:
-		0:
-			print("No Events Today!")
-		1:
-			print("It's Payday!")
+#func new_Day() -> void:
+	#print(event)
+	#match event:
+		#0:
+			#print("No Events Today!")
+		#1:
+			#print("It's Payday!")
 		
-		2:
-			print("Am I insured?")
+		#2:
+			#print("Am I insured?")
 		 
-		3: 
-			print("Bills...")
-		4:
-			print("Credit Mail")
-		5:
-			print("Emergency")
+		#3: 
+			#print("Bills...")
+		#4:
+			#print("Credit Mail")
+		#5:
+			#print("Emergency")
 			
 
+func _on_days_day_passed():
+	var event = randi_range(0,5)
+	if event == 0: 
+		print("0")
+	if event == 1: 
+		payday.emit()
+	if event == 2: 
+		lifeInsurance.emit()
+	if event == 3: 
+		credit_card.emit()
+	if event == 4:
+		print("4")
+	if event == 5:
+		print("5")
 
-
-
-
+		
 
 
 
@@ -194,3 +210,6 @@ func _on_exit_extra_card_pressed() -> void:
 	print("hide")
 	#$PaydayEvent.visble = false
 	print("Payday is set to false")
+
+
+
